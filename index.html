@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blue Dot — Software studio, Turin</title>
+<meta name="description" content="Blue Dot is a software studio in Turin building AI for business process automation — for the web and the app stores.">
+<style>
+  :root{
+    --bg:#FAFBFC;
+    --ink:#0C1019;
+    --muted:#586173;
+    --line:#E7EBF1;
+    --blue:#1B4DF5;
+    --blue-press:#1340D6;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:18px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:48px 28px 72px;
+  }
+
+  /* brand mark */
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    font-size:1.02rem;
+  }
+  .dot{
+    display:inline-block;
+    width:13px;height:13px;
+    border-radius:50%;
+    background:var(--blue);
+    flex:0 0 auto;
+  }
+
+  /* hero */
+  .hero{margin-top:18vh}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:0.74rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 26px;
+  }
+  h1{
+    font-size:clamp(2.5rem,6.2vw,4.4rem);
+    line-height:1.03;
+    letter-spacing:-0.035em;
+    font-weight:680;
+    margin:0;
+    max-width:14ch;
+  }
+  .dot--hero{
+    width:0.42em;height:0.42em;
+    margin-left:0.06em;
+    vertical-align:baseline;
+    transform:translateY(0.02em);
+  }
+  .lede{
+    color:var(--muted);
+    font-size:clamp(1.05rem,2.2vw,1.26rem);
+    line-height:1.55;
+    margin:30px 0 0;
+    max-width:52ch;
+  }
+
+  /* blocks */
+  .block{
+    margin-top:88px;
+    padding-top:34px;
+    border-top:1px solid var(--line);
+  }
+  .label{
+    font-family:var(--mono);
+    font-size:0.74rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+    margin:0 0 20px;
+  }
+  .block p{margin:0;max-width:56ch}
+  .block p + p{margin-top:16px}
+
+  /* work list */
+  .work{list-style:none;margin:0;padding:0}
+  .work li{
+    padding:24px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .work li:first-child{padding-top:4px}
+  .work li:last-child{border-bottom:0;padding-bottom:0}
+  .tag{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:0.66rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--blue);
+    border:1px solid color-mix(in srgb,var(--blue) 26%,transparent);
+    border-radius:999px;
+    padding:3px 9px;
+    margin-bottom:12px;
+  }
+  .work h3{
+    font-size:1.18rem;
+    letter-spacing:-0.015em;
+    font-weight:620;
+    margin:0 0 5px;
+  }
+  .work p{
+    color:var(--muted);
+    font-size:1rem;
+    line-height:1.5;
+    margin:0;
+    max-width:58ch;
+  }
+
+  /* footer */
+  footer{
+    margin-top:88px;
+    padding-top:30px;
+    border-top:1px solid var(--line);
+    font-family:var(--mono);
+    font-size:0.8rem;
+    line-height:1.85;
+    color:var(--muted);
+  }
+  footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--blue);border-color:var(--blue)}
+  footer a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+  .legal{margin-top:14px}
+  .copy{margin-top:14px;opacity:0.8}
+
+  /* the name — pale blue dot, the void */
+  .void{
+    background:#06080F;
+    background-image:radial-gradient(120% 80% at 50% 20%, #131B31 0%, #0A0E1B 44%, #06080F 100%);
+    color:#A4AEC0;
+  }
+  .void-inner{
+    max-width:760px;
+    margin:0 auto;
+    padding:108px 28px;
+  }
+  .pale-dot{
+    display:block;
+    width:11px;height:11px;
+    border-radius:50%;
+    background:#AEC8FF;
+    box-shadow:0 0 22px 5px rgba(135,172,255,0.45);
+    margin:0 0 42px;
+  }
+  .void-label{
+    font-family:var(--mono);
+    font-size:0.74rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#8491A8;
+    margin:0 0 22px;
+  }
+  .void-lede{
+    color:#C8D1E0;
+    font-size:clamp(1.12rem,2.4vw,1.42rem);
+    line-height:1.5;
+    letter-spacing:-0.01em;
+    margin:0;
+    max-width:50ch;
+  }
+  .void-lede em{font-style:italic;color:#fff}
+  .quote{
+    margin:36px 0;
+    padding-left:22px;
+    border-left:2px solid rgba(174,200,255,0.5);
+    font-size:clamp(1.2rem,2.6vw,1.62rem);
+    line-height:1.34;
+    letter-spacing:-0.015em;
+    color:#EAF0FB;
+    font-weight:300;
+  }
+  .quote cite{
+    display:block;
+    margin-top:15px;
+    font-family:var(--mono);
+    font-style:normal;
+    font-size:0.74rem;
+    letter-spacing:0.1em;
+    color:#7886A0;
+  }
+  .void-body{
+    color:#A4AEC0;
+    font-size:1.06rem;
+    line-height:1.62;
+    margin:0;
+    max-width:54ch;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .pale-dot{animation:breathe 7s ease-in-out infinite alternate}
+    @keyframes breathe{
+      from{box-shadow:0 0 16px 3px rgba(135,172,255,0.30)}
+      to{box-shadow:0 0 27px 7px rgba(135,172,255,0.55)}
+    }
+  }
+
+  /* entrance */
+  @media (prefers-reduced-motion:no-preference){
+    .anim{opacity:0;transform:translateY(9px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+    .d1{animation-delay:.05s}
+    .d2{animation-delay:.16s}
+    .d3{animation-delay:.30s}
+    .dot--hero{transform:translateY(0.02em) scale(0);animation:pop .5s cubic-bezier(.2,1.4,.4,1) .62s forwards}
+    @keyframes rise{to{opacity:1;transform:translateY(0)}}
+    @keyframes pop{to{transform:translateY(0.02em) scale(1)}}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="brand anim d1">
+      <span class="dot" aria-hidden="true"></span>
+      Blue Dot
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow anim d1">Software studio · Turin</p>
+      <h1 class="anim d2">Every problem should be solved only once<span class="dot dot--hero" aria-hidden="true"></span></h1>
+      <p class="lede anim d3">Blue Dot is a software studio in Turin building AI for business process automation — for the web and the app stores. We make software that gives people their time back, reduces errors, and lets work run cleaner.</p>
+    </section>
+
+  </div><!-- /wrap -->
+
+  <section class="void">
+    <div class="void-inner">
+      <span class="pale-dot" aria-hidden="true"></span>
+      <p class="void-label">The name</p>
+      <p class="void-lede">Blue Dot is named for the <em>Pale Blue Dot</em> — Earth photographed by Voyager&nbsp;1 from six billion kilometres away, and Carl Sagan's reflection on that image. Seen from far enough out, everything we do, large or small, collapses into a single point of light.</p>
+      <blockquote class="quote">&ldquo;a mote of dust suspended in a sunbeam&rdquo;<cite>Carl Sagan</cite></blockquote>
+      <p class="void-body">We take that distance as a kind of clarity about what actually matters. Our aim is to be more human through technology — to hand off to machines everything that pulls us apart, and keep for ourselves what makes us human: being present, thoughtful, gentle, caring, together. We're building toward a world full of technology where people come out freer because of it.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <section class="block">
+      <h2 class="label">What we do</h2>
+      <p>We work in two modes. We ship commercial products as SaaS, and we run our own research into how frontier AI models fit into real business systems. The two feed each other: research sharpens the products, and the products keep the research honest.</p>
+    </section>
+
+    <section class="block">
+      <h2 class="label">Current work</h2>
+      <ul class="work">
+        <li>
+          <span class="tag">Commercial</span>
+          <h3>App for nail technicians</h3>
+          <p>A native iOS and Android app that helps nail technicians run their business, work better, and earn more.</p>
+        </li>
+        <li>
+          <span class="tag">Commercial</span>
+          <h3>Accounts receivable automation</h3>
+          <p>A web app that pairs workflow automation with LLMs across email, SMS, WhatsApp, and voice to manage receivables autonomously and bring down DSO.</p>
+        </li>
+        <li>
+          <span class="tag">Commercial</span>
+          <h3>Boston Whaler community store</h3>
+          <p>An e-commerce site for Italy's community of Boston Whaler owners and enthusiasts.</p>
+        </li>
+        <li>
+          <span class="tag">Research</span>
+          <h3>Frontier LLMs in business applications</h3>
+          <p>Integrating frontier language models into business software, in partnership with Agent0.</p>
+        </li>
+        <li>
+          <span class="tag">Research</span>
+          <h3>WhatsApp-native CRM</h3>
+          <p>A simple, AI-assisted CRM that lives entirely inside WhatsApp — for freelancers, solo founders, and small teams.</p>
+        </li>
+        <li>
+          <span class="tag">Research</span>
+          <h3>AI-native ERP</h3>
+          <p>An integration layer between frontier models and business data, aimed at automating a company's core flows end to end.</p>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      Blue Dot Srl
+      <div class="legal">
+        Via Giacinto Collegno 53, 10138 Torino, Italy<br>
+        C.F. / P.IVA IT13456190019<br>
+        <a href="mailto:info@blue-dot.it">info@blue-dot.it</a>
+      </div>
+      <div class="copy">© 2026 Blue Dot Srl</div>
+    </footer>
+
+  </div>
+</body>
+</html>
